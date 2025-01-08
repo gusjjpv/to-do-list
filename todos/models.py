@@ -12,10 +12,10 @@ class Todo(models.Model):
     # auto_now_add=True vai adicionar a data e hora atual quando o objeto for criado.
     deadline = models.DateField(verbose_name="Data de Entrega", null=True, blank=True)
     finishead = models.DateField(null=True)
-    
+
     class Meta:
         ordering = ["deadline"]
-        
+
     def mark_has_complete(self):
         if not self.finishead:
             self.finishead = date.today()
